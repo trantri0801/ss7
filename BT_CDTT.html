@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT_CDTT</title>
+</head>
+<body>
+    <table>
+    <form>
+        <tr>
+            <td>
+                Amount
+            </td>
+            <td>
+                From Currency
+            </td>
+            <td>
+                To Currency
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="menhgiatien" size="10">
+            </td>
+            <td style="text-align: center">
+                <select id="select1" >
+                    <option value="VND"> VND </option>
+                    <option value="USD"> USD </option>
+                </select>
+            </td>
+            <td style="text-align: center">
+                <select id="select2">
+                    <option value="VND"> VND </option>
+                    <option value="USD"> USD </option>
+                </select>
+            </td>
+            <td>
+                <input type="button" onclick="hienthiketqua()" value="Convert">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" id="showkq" width="20" height="30">
+
+            </td>
+        </tr>
+    </form>
+    </table>
+
+</body>
+<script>
+    function hienthiketqua()
+    {
+        var menhgia = document.getElementById("menhgiatien").value;
+        var tiengoc = document.getElementById("select1").value;
+        var tiensau = document.getElementById("select2").value;
+        if (tiengoc == tiensau)
+        {
+            alert('Hai tiền quy đổi phải khác nhau');
+        }
+        if (menhgia == "")
+        {
+            alert('Hãy nhập số tiền muốn chuyển đổi');
+        }
+        else {
+            if (tiengoc == "VND" && tiensau == "USD") {
+                let tienquydoi = menhgia / 23500;
+                document.getElementById("showkq").innerHTML = menhgia + "&nbsp" + tiengoc + "&nbsp = " + tienquydoi + "&nbsp" + tiensau;
+            } else {
+                if (tiengoc == "USD" && tiensau == "VND") {
+                    let tienquydoi = menhgia * 23500;
+                    document.getElementById("showkq").innerHTML = menhgia + "&nbsp" + tiengoc + "&nbsp = " + tienquydoi + "&nbsp" + tiensau;
+                }
+            }
+        }
+    }
+</script>
+</html>
