@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT_Bien_KieuDuLieu_ToanTu</title>
+</head>
+<body>
+
+</body>
+<script>
+    let inptvatly;
+    let inputsinhoc;
+    let inputtoan;
+    inputvatly = prompt("Nhập điểm vật lý");
+    inputsinhoc = prompt("Nhập điểm sinh");
+    inputtoan = prompt("Nhập điểm toán");
+    let vl = parseInt(inputvatly);
+    let sh = parseInt(inputsinhoc);
+    let t = parseInt(inputtoan);
+    let tong = vl + sh + t;
+    let tb = tong/3
+    document.write(" Điểm trung bình của bạn là " + tb);
+
+    let doC;
+    doC = prompt("Nhập độ C");
+    let C = parseInt(doC);
+    let F = (9*C)/5 + 32;
+    document.write(" Độ F là " + F);
+
+    const pi = 3.14;
+    let R;
+    R = prompt("Nhập bán kính hình tròn: ");
+    let S = pi * R * R;
+    let P = pi * 2 * R;
+    document.write(" Diện tích hình tròn = " + S);
+    document.write(" Chu vi hình tròn = " + P);
+</script>
+</html>
