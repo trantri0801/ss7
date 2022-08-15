@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT_UngDungMayTinh</title>
+</head>
+<body>
+<h2>
+    Caculator
+</h2>
+<input type="text" id="text1" size="15"> &nbsp <input type="text" id="text2" size="15">
+<br>
+<br>
+<input type="button" onclick="phepcong()" value="Phép cộng">
+<input type="button" onclick="pheptru()" value="Phép trừ">
+<input type="button" onclick="phepnhan()" value="Phép nhân">
+<input type="button" onclick="phepchia()" value="Phép chia">
+<br>
+<br>
+<div id="kq"> Kết quả </div>
+</body>
+<script>
+    function phepcong() {
+        var so1 = document.getElementById("text1").value;
+        var so2 = document.getElementById("text2").value;
+        if (so1 == "" || so2 == "")
+        {
+            alert("Hãy nhập giá trị vào ô tương ứng");
+        }
+        else {
+            let sodautien = parseInt(so1);
+            let sothuhai = parseInt(so2);
+            let tong = sodautien + sothuhai;
+            document.getElementById("kq").innerHTML = "Kết quả của phép tính cộng = " + tong;
+        }
+    }
+    function pheptru() {
+        var so1 = document.getElementById("text1").value;
+        var so2 = document.getElementById("text2").value;
+        if (so1=="" || so2=="")
+        {
+            alert("Hãy nhập giá trị vào ô tương ứng");
+        }
+        else {
+            let sodautien = parseInt(so1);
+            let sothuhai = parseInt(so2);
+            let tru = sodautien - sothuhai;
+            document.getElementById("kq").innerHTML = "Kết quả của phép tính trừ = " + tru;
+        }
+    }
+    function phepnhan() {
+        var so1 = document.getElementById("text1").value;
+        var so2 = document.getElementById("text2").value;
+        if (so1=="" || so2=="")
+        {
+            alert("Hãy nhập giá trị vào ô tương ứng");
+        }
+        else {
+            let sodautien = parseInt(so1);
+            let sothuhai = parseInt(so2);
+            let nhan = sodautien * sothuhai;
+            document.getElementById("kq").innerHTML = "Kết quả của phép tính nhân = " + nhan;
+        }
+    }
+    function phepchia() {
+        var so1 = document.getElementById("text1").value;
+        var so2 = document.getElementById("text2").value;
+        if (so1=="" || so2=="")
+        {
+            alert("Hãy nhập giá trị vào ô tương ứng");
+        }
+        else {
+            let sodautien = parseInt(so1);
+            let sothuhai = parseInt(so2);
+            if (sothuhai == 0) {
+                alert("Số bị chia phải khác 0, hãy nhập lại số khác");
+            } else {
+                let chia = sodautien / sothuhai
+                document.getElementById("kq").innerHTML = "Kết quả của phép tính chia = " + chia;
+            }
+        }
+    }
+</script>
+</html>
